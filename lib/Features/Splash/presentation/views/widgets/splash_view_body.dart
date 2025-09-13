@@ -1,4 +1,3 @@
-
 import 'package:clean_architecture_course/core/utils/app_router.dart';
 import 'package:clean_architecture_course/core/utils/assets.dart';
 import 'package:flutter/cupertino.dart';

@@ -13,5 +13,3 @@ class FetchFeaturedBooksUseCase extends UseCase<List<BookEntity>, NoParams> {
     return homeRepo.fetchFeaturedBooks();
   }
 }
-
-
