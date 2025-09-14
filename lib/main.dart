@@ -5,16 +5,18 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:hive/hive.dart';
+import 'package:hive_flutter/adapters.dart';
 
-void main() {
+void main() async {
+  await Hive.initFlutter();
+  Hive.registerAdapter(BookEntityAdapter());
+  await Hive.openBox<BookEntity>(kFeaturedBox);
+  await Hive.openBox<BookEntity>(kNewestBox);
   runApp(
     const ProviderScope(
       child: Bookly(),
     ),
   );
-
-  Hive.registerAdapter(BookEntityAdapter());
-  Hive.openBox(kFeaturedBox);
 }
 
 class Bookly extends StatelessWidget {
